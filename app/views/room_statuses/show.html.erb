@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ac temperature:</strong>
+  <%= @room_status.ac_temperature %>
+</p>
+
+<p>
+  <strong>Ac status:</strong>
+  <%= @room_status.ac_status %>
+</p>
+
+<p>
+  <strong>Tv status:</strong>
+  <%= @room_status.tv_status %>
+</p>
+
+<p>
+  <strong>Tv channel:</strong>
+  <%= @room_status.tv_channel %>
+</p>
+
+<p>
+  <strong>Lamp status:</strong>
+  <%= @room_status.lamp_status %>
+</p>
+
+<%= link_to 'Edit', edit_room_status_path(@room_status) %> |
+<%= link_to 'Back', room_statuses_path %>
