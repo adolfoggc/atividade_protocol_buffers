@@ -10,8 +10,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :temp, :int32, 2
     end
     add_enum "Termometro.Comando" do
-      value :nulo, 0
-      value :getTemp, 1
+      value :NULO, 0
+      value :GETTEMP, 1
     end
   end
 end

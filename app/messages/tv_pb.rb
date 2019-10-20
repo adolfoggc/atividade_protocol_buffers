@@ -11,11 +11,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :canal, :int32, 3
     end
     add_enum "Tv.Comando" do
-      value :null, 0
-      value :getEstado, 1
-      value :setEstado, 2
-      value :getCanal, 3
-      value :setCanal, 4
+      value :NULL, 0
+      value :GETESTADO, 1
+      value :SETESTADO, 2
+      value :GETCANAL, 3
+      value :SETCANAL, 4
     end
   end
 end

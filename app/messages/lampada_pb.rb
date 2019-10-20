@@ -10,9 +10,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :estado, :bool, 2
     end
     add_enum "Lampada.Comando" do
-      value :nulo, 0
-      value :setEstado, 1
-      value :getEstado, 2
+      value :NULL, 0
+      value :SETESTADO, 1
+      value :GETESTADO, 2
     end
   end
 end
