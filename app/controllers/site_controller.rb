@@ -8,6 +8,4 @@ class SiteController < ApplicationController
   	room.ac_temperature = params[:info].to_i
   	room.save
   end
-
-  
 end
