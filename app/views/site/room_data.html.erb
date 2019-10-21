@@ -18,16 +18,14 @@
 			<%= "Canal: #{@tv.channel}" %>
 		<% end %>
 		<hr>
+		<br>
 	<% end %>
-	<% if !@tv.status.nil? %>
+	<% if !@termo.temperature.nil? %>
 		<hr>
-		Tv:
+		Temperatura:
 		<hr>
 		<hr>
-		<%= @tv.estado_tv %>
-		<% if @tv.status == 1 %>
-			<%= "Canal: #{@tv.channel}" %>
-		<% end %>
+		<%= "Temperatura: #{@termo.celsius} / #{@termo.farenheit} / #{@termo.kelvin}" %>
 		<hr>
 	<% end %>
 </div>

@@ -12,7 +12,13 @@ module ApplicationHelper
 		tv.comando = command
 		tv.canal = channel
 		tv.estado =  state
-		puts tv
 		return Tv.encode(tv)
+	end
+
+	def termo_encode(command, temp)
+		termo = Termometro.new
+		termo.comando = command
+		termo.temp = temp
+		return Termometro.encode(termo)
 	end
 end
