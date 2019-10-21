@@ -13,6 +13,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :NULL, 0
       value :SETESTADO, 1
       value :GETESTADO, 2
+      value :REQ, 3
     end
   end
 end

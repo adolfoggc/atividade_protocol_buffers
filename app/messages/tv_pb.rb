@@ -16,6 +16,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :SETESTADO, 2
       value :GETCANAL, 3
       value :SETCANAL, 4
+      value :REQ, 5
     end
   end
 end
