@@ -1,3 +1,33 @@
 <div>
-	Lampada: <%= @lights.estado_lampada%>
+	<% if !@lights.status.nil? %>
+		<hr>
+		Lampada:
+		<hr>
+		<hr>
+		<%= @lights.estado_lampada %>
+		<hr>
+		<br>
+	<% end %>
+	<% if !@tv.status.nil? %>
+		<hr>
+		Tv:
+		<hr>
+		<hr>
+		<%= @tv.estado_tv %>
+		<% if @tv.status == 1 %>
+			<%= "Canal: #{@tv.channel}" %>
+		<% end %>
+		<hr>
+	<% end %>
+	<% if !@tv.status.nil? %>
+		<hr>
+		Tv:
+		<hr>
+		<hr>
+		<%= @tv.estado_tv %>
+		<% if @tv.status == 1 %>
+			<%= "Canal: #{@tv.channel}" %>
+		<% end %>
+		<hr>
+	<% end %>
 </div>

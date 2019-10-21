@@ -2,10 +2,10 @@ class Light < ApplicationRecord
 	
 	#estados
 	def estado_lampada
-		if self.status == true
-			return 'Ligado'
+		if self.status == 1
+			return 'Ligada'
 		else
-			return 'Desligado'
+			return 'Desligada'
 		end
 	end
 

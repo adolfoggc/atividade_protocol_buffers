@@ -12,6 +12,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_enum "Termometro.Comando" do
       value :NULO, 0
       value :GETTEMP, 1
+      value :REQ, 2 #adicionado. não tinha no do Luan
     end
   end
 end
