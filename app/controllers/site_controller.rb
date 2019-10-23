@@ -61,17 +61,8 @@ class SiteController < ApplicationController
   end
 
   def set_lamp
-    #lamp = lamp_encode(params)
-    #link_to 'test', root_url(:port => 80, :only_path => false)
-    ###
-
-    # s = TCPSocket.open('localhost', 3004)
-    # puts "\UPTIME"
-    # s.close
-    s = TCPSocket.new 'localhost', 8080
-
-    s.puts('UPTIME'.to_s)
-    s.close
+    lamp = lamp_encode(3, true)
+    tcp_send(lamp, 'localhost', 10000)
 
   end
 end

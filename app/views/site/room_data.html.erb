@@ -1,12 +1,15 @@
-<div>
+<div class="container">
 	<% if !@lights.status.nil? %>
-		<hr>
-		Lampada:
-		<hr>
-		<hr>
-		<%= @lights.estado_lampada %>
-		<hr>
-		<br>
+		<div class="col-6 centered">
+			<div class="row rounded border border-primary">
+				<div class="col-6">
+					Lampada:
+				</div>
+				<div class="col-6">
+					<%= @lights.estado_lampada %>
+				</div>
+			</div>
+		</div>
 	<% end %>
 	<% if !@tv.status.nil? %>
 		<hr>

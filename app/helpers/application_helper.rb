@@ -21,4 +21,11 @@ module ApplicationHelper
 		termo.temp = temp
 		return Termometro.encode(termo)
 	end
+
+	def tcp_send(object, destination, port)
+		s = TCPSocket.new(destination, port)
+    s.puts(object)
+    s.close
+	end
+
 end
