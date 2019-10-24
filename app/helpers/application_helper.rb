@@ -4,6 +4,7 @@ module ApplicationHelper
 		lamp = Lampada.new
 		lamp.comando = op
 		lamp.estado = estado
+		puts lamp
 		return Lampada.encode(lamp)
 	end
 

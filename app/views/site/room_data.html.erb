@@ -1,40 +1,94 @@
 <div class="container">
-	<% if !@lights.status.nil? %>
-		<div class="col-6 centered">
-			<div class="row rounded border border-primary">
-				<div class="col-6">
-					Lampada:
+	<div class="row centered py-2">
+		<% if !@lights.status.nil? %>
+			<div class="col-4 py-2 rounded border border-primary">
+				<div class="row justify-content-center px-2">
+					Lampada: <%= @lights.estado_lampada %>
 				</div>
-				<div class="col-6">
-					<%= @lights.estado_lampada %>
+				<br>
+				<div class="row justify-content-center px-2">
+					<%= form_with(model: @new_lamp, url: set_lamp_path )do |f| %>
+					  <% if @lights.status == 1 %>
+					  	<% light_s = 'Desligar' %>
+					  <% elsif @lights.status == 0 %>
+					  	<% light_s = 'Ligar' %>
+					  <% end %>
+					  <%= f.submit light_s %>
+					<% end %>
 				</div>
 			</div>
-		</div>
-	<% end %>
-	<% if !@tv.status.nil? %>
-		<hr>
-		Tv:
-		<hr>
-		<hr>
-		<%= @tv.estado_tv %>
-		<% if @tv.status == 1 %>
-			<%= "Canal: #{@tv.channel}" %>
 		<% end %>
-		<hr>
-		<br>
-	<% end %>
-	<% if !@termo.temperature.nil? %>
-		<hr>
-		Temperatura:
-		<hr>
-		<hr>
-		<%= "Temperatura: #{@termo.celsius} / #{@termo.farenheit} / #{@termo.kelvin}" %>
-		<hr>
-	<% end %>
+		<% if !@tv.status.nil? %>
+			<div class="col-4 py-2 rounded border border-primary">
+				<div class="row justify-content-center px-2">
+					<% if @tv.status == 1 %>
+						<div class="col  justify-content-center">
+					<% end %>
+						Tv: <%= @tv.estado_tv %>
+					<% if @tv.status == 1 %>
+						</div>
+						<div class="col-6 justify-content-center">
+							<% if @tv.status == 1 %>
+								<%= "Canal: #{@tv.channel}" %>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+				<br>
+				<div class="row justify-content-center px-2">
+					<% if @tv.status == 1 %>
+						<div class="col-6 justify-content-center">
+					<% end %>
+						<%= form_with(model: @new_tv, url: set_tv_path )do |f| %>
+						  <% if @tv.status == 1 %>
+						  	<% tv_s = 'Desligar' %>
+						  <% elsif @lights.status == 0 %>
+						  	<% tv_s = 'Ligar' %>
+						  <% end %>
+						  <%= f.submit tv_s %>
+						<% end %>
+					<% if @tv.status == 1 %>
+						</div>
+						<div class="col-6 justify-content-center">
+							<%= form_with(model: @new_tv, url: set_tv_path )do |f| %>
+						  <%= f.label(:channel, 'Canal') %>
+						  <%= f.number_field(:channel, value: @tv.channel, class: 'max_100') %>
+						  <div class="justify-content-center">
+						  	<%= f.submit 'Mudar' %>
+						  </div>
+						<% end %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+		<% if !@termo.temperature.nil? %>
+			<div class="col-4 py-2 rounded border border-primary">
+				<div class="row justify-content-center text-center px-2">
+						<%= "Temperatura:" %>
+						<br>
+						<%= @termo.celsius %>
+						<br>
+						<%= @termo.farenheit %>
+						<br>
+						<%= @termo.kelvin %>
 
+				</div>
+			</div>
+		<% end %>
+	</div>
 <!-- 	<%# form_with(url: "/search", method: "post") do %>
 	  <%# label_tag(:q, "Search for:") %>
 	  <%# text_field_tag(:q) %>
   <%# submit_tag("Mudar Temperatura") %>
 <%# end %> -->
+
+<%# form_with model: @new_lamp, class: "nifty_form" do |f| %>
+
 </div>
+
+<style>
+	.max_100 {
+		width: 100%;
+	}
+</style>
